@@ -1,0 +1,9 @@
+<li ng-repeat="item in items">
+   Short name: {{ item.short_name }}<br>
+   Name: {{ item.name }}<br>
+   Description:{{item.description}}<br>
+   <button ng-click="onRemove({index: $index});">Narrow It Down For Me!</button>
+</li>
+<div style="display:none" ng-transclude>
+  Nothing found
+</div>
