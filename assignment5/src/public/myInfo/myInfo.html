@@ -5,18 +5,30 @@
   </div>
   <div ng-if="!myInfoCtrl.flag">
     <li ng-repeat="item in myInfoCtrl.list">
+      <div>
+        First Name: {{item.first_name}}
+      </div>
+      <div>
+        Last Name: {{item.last_name}}
+      </div>
+      <div>
+        Email: {{item.email_id}}
+      </div>
+      <div>
+        Phone Number: {{item.phone_no}}
+      </div>
       <div class="menu-item-tile col-md-6">
         <div class="row">
           <div class="col-sm-5">
             <div class="menu-item-photo">
-              <div>{{item.short_name}}</div>
-              <img class="img-responsive" width="250" height="150" ng-src="{{myInfoCtrl.basePath}}/images/{{item.short_name}}.jpg" alt="{{item.name}}">
+              <div>{{item.favFood.short_name}}</div>
+              <img class="img-responsive" width="250" height="150" ng-src="{{myInfoCtrl.basePath}}/images/{{item.favFood.short_name}}.jpg" alt="{{item.favFood.name}}">
             </div>
 
           </div>
           <div class="menu-item-description col-sm-7">
-            <h3 class="menu-item-title">{{item.name}}</h3>
-            <p class="menu-item-details">{{item.description}}</p>
+            <h3 class="menu-item-title">{{item.favFood.name}}</h3>
+            <p class="menu-item-details">{{item.favFood.description}}</p>
           </div>
         </div>
         <hr class="visible-xs">

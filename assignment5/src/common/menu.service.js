@@ -46,11 +46,11 @@ function MenuService($http, ApiPath,$rootScope) {
   });
   };
   service.getFavItems=function(){
-    var list=[]
-    for(var i=0;i<data.length;i++){
-      list.push(data[i].favFood);
-    }
-    return list;
+    //var list=[]
+    //for(var i=0;i<data.length;i++){
+    //  list.push(data[i].favFood);
+    //}
+    return data;
   }
 
 }
