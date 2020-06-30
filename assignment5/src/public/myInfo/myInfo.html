@@ -1,0 +1,30 @@
+<div class="container">
+  <h1>My Info</h1>
+  <div ng-if="myInfoCtrl.flag">
+    Not Signed Up Yet.<a  ui-sref="public.signUp">Sign up Now!</a>
+  </div>
+  <div ng-if="!myInfoCtrl.flag">
+    <li ng-repeat="item in myInfoCtrl.list">
+      <div class="menu-item-tile col-md-6">
+        <div class="row">
+          <div class="col-sm-5">
+            <div class="menu-item-photo">
+              <div>{{item.short_name}}</div>
+              <img class="img-responsive" width="250" height="150" ng-src="{{myInfoCtrl.basePath}}/images/{{item.short_name}}.jpg" alt="{{item.name}}">
+            </div>
+
+          </div>
+          <div class="menu-item-description col-sm-7">
+            <h3 class="menu-item-title">{{item.name}}</h3>
+            <p class="menu-item-details">{{item.description}}</p>
+          </div>
+        </div>
+        <hr class="visible-xs">
+      </div>
+
+    </li>
+
+  </div>
+
+
+</div>

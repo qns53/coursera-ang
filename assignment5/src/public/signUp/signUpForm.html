@@ -1,0 +1,63 @@
+<form name='regForm' novalidate>
+
+      <input type="text" name="firstName" placeholder="Type your First Name"
+        ng-model="$ctrl.firstName"
+        style="color:#000000"
+        required
+        minlength="1">
+        {{ $ctrl.firstName }}
+        <span
+          ng-if="(regForm.firstName.$error.minlength || regForm.firstName.$error.required) && regForm.firstName.$touched">
+          First Name is Required
+        </span>
+
+        <br>
+        <input type="text" name="lastName" placeholder="Type your Last Name"
+          ng-model="$ctrl.lastName"
+          style="color:#000000"
+          required
+          minlength="1">
+          {{ $ctrl.lastName }}
+          <span
+            ng-if="(regForm.lastName.$error.minlength || regForm.lastName.$error.required) && regForm.lastName.$touched">
+            Last Name is Required
+          </span>
+
+          <br>
+      <input type="email" name="email" placeholder="Email"
+        ng-model="$ctrl.email"
+        style="color:#000000"
+        required>
+        <span ng-if="regForm.email.$invalid && regForm.email.$touched">
+          Must be a valid email address: handle@domain format
+        </span>
+        <br>
+
+      <input type="text" name="phone" placeholder="Phone ###-###-####"
+          ng-model="$ctrl.phone"
+          style="color:#000000"
+        pattern="(\d{3})-(\d{3})-(\d{4})">
+        <span ng-if="regForm.phone.$invalid && regForm.phone.$touched">
+          Phone must be in the format ###-###-####.
+        </span>
+        <br>
+        <input type="text" name="favFood" placeholder="Type your Favourite Item"
+          ng-model="$ctrl.fav_food"
+          style="color:#000000"
+          required
+          minlength="1">
+          <span style="margin-top: 10px;" ng-if="$ctrl.display">
+            No such menu number exists
+          </span>
+          <span
+            ng-if="(regForm.favFood.$error.minlength || regForm.favFood.$error.required) && regForm.favFood.$touched">
+            Field is Required
+          </span>
+          <br>
+
+      <button
+        ng-disabled="regForm.$invalid"
+        ng-click="$ctrl.submit()">Submit</button>
+
+
+    </form>
